@@ -5,6 +5,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import Swal from "sweetalert2";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
+import SocialLogin from "../../components/SocialLogin/SocialLogin";
 
 const SignUp = () => {
   const axiosPublic = useAxiosPublic();
@@ -144,7 +145,7 @@ const SignUp = () => {
                   </span>
                 )}
               </div>
-              <div className="form-control mt-6">
+              <div className="form-control mt-3">
                 <input
                   className="btn btn-primary"
                   type="submit"
@@ -152,11 +153,14 @@ const SignUp = () => {
                 />
               </div>
             </form>
-            <p>
+            <p className="text-center">
               <small>
-                Already have an account? <Link to="/login">Please login</Link>
+                Already have an account? <Link to="/login"> <span className="text-red-800">Please login</span></Link>
               </small>
             </p>
+            <div>
+              <SocialLogin></SocialLogin>
+            </div>
           </div>
         </div>
       </div>
